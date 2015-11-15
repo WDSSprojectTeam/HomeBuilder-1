@@ -340,6 +340,7 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.vb">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Content Include="App_Code\Optimization.vb" />
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\IdentityConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
