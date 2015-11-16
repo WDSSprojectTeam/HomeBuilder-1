@@ -5,6 +5,7 @@ Public Class TeamOptimizer
     ' inputs
 
     ' model
+    Private myModel As Model
 
 
     Public Sub New()
@@ -30,7 +31,12 @@ Public Class TeamOptimizer
     End Sub
 
     Private Sub AddDecisions()
+        Dim i As Integer
+        For i = 0 To myFeaturesList.count - 1
+            For j = 0 To myOptionsList.count - 1
 
+            Next
+        Next
     End Sub
 
     Private Sub AddConstraints()
