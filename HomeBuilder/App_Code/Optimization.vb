@@ -1,10 +1,11 @@
 ﻿Imports Microsoft.VisualBasic
 Imports Microsoft.SolverFoundation.Services
+Imports System.Collections.Generic
 
-Public Class TeamOptimizer
+Public Class Optimization
     ' inputs
-    Private myFeatureList As List(Of String)
-    Private myOptionList As List(Of String)
+    Private myFeatureList As List(Of Feature)
+    Private myOptionList As List(Of Options)
     Private myCostList As List(Of Cost)
     Private budget As Integer
     Private featureUtility As List(Of Integer)
@@ -12,6 +13,7 @@ Public Class TeamOptimizer
     ' model
     Private myModel As Model
     Private myDecisionList As New List(Of Decision)
+    Private myFeatures As List(Of Integer)
 
     Public Sub New(ByVal aCostList As List(Of Cost))
         myCostList = aCostList
@@ -43,8 +45,10 @@ Public Class TeamOptimizer
             For j = 0 To myOptionList.Count - 1
                 Dim myDecision As New Decision(Domain.Boolean, "X" & i & j)
                 myDecisionList.Add(myDecision)
+
                 ' adds Xij decision variables to the model
                 myModel.AddDecision(myDecision)
+                myFeatures.Add(i)
             Next
         Next
     End Sub
