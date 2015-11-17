@@ -13,6 +13,8 @@ Public Class DataLoader
 
     Public Sub LoadOptions()
 
+        Dim afeaturelist As New Feature
+
         myConnection = New OleDbConnection(myConnectionStr)
         myCommand = New OleDbCommand("SELECT tblOptions.FeatureID, tblOptions.UpgradeID, tblOptions.UpgradeName, tblOptions.UpgradePrice, tblOptions.Description
 FROM tblOptions GROUP BY tblOptions.FeatureID, tblOptions.UpgradeID, tblOptions.UpgradeName, tblOptions.UpgradePrice, tblOptions.Description", myConnection)
@@ -27,7 +29,7 @@ FROM tblOptions GROUP BY tblOptions.FeatureID, tblOptions.UpgradeID, tblOptions.
                 Dim OptionPrice As Double = myReader.Item("UpgradePrice")
                 Dim OptionDescription As String = myReader.Item("Description")
                 Dim OptionFeature As Integer = myReader.Item("FeatureID")
-                Dim anoption As New Options(OptionID, OptionName, OptionPrice, OptionDescription, OptionFeature)
+                afeaturelist.Addtofeaturelist(New Options(OptionID, OptionName, OptionPrice, OptionDescription, OptionFeature))
             Loop
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -40,8 +42,6 @@ FROM tblOptions GROUP BY tblOptions.FeatureID, tblOptions.UpgradeID, tblOptions.
     End Sub
 
 
-    Public Sub 
 
-    End Sub
 
 End Class
