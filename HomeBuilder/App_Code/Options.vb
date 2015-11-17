@@ -5,7 +5,9 @@ Public Class Options
     Private Name As String
     Private Price As Double
     Private Description As String
-    Private Feature As Integer
+    Private FeatureID As Integer
+    Private PreferenceRating As Integer
+    Private Need As Boolean
 
     Public Sub New(ByVal optid As Integer, ByVal optname As String, ByVal optprice As Double, ByVal optdescription As String, ByVal optfeature As String)
 
@@ -13,7 +15,9 @@ Public Class Options
         Name = optname
         Price = optprice
         Description = optdescription
-        Feature = optfeature
+        FeatureID = optfeature
+        PreferenceRating = 0
+        Need = False
 
     End Sub
 
@@ -38,7 +42,7 @@ Public Class Options
     Public Function CalculateTotalPrice(ByVal squarefeet As Double) As Double
         Dim totalprice As Double
 
-
+        'will add something here once we decide how we categorize homes
 
         Return totalprice
     End Function
@@ -51,7 +55,7 @@ Public Class Options
 
     Public ReadOnly Property getoptionfeature As String
         Get
-            Return Feature
+            Return FeatureID
         End Get
     End Property
 
