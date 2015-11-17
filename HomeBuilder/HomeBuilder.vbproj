@@ -362,6 +362,9 @@
     <Content Include="App_Code\Feature.vb" />
     <Content Include="App_Code\Options.vb" />
     <Content Include="App_Code\Room.vb" />
+    <Content Include="App_Code\Optimization.vb" />
+    <Content Include="App_Code\DataLoader.vb" />
+    <Content Include="App_Code\Cost.vb" />
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\IdentityConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />

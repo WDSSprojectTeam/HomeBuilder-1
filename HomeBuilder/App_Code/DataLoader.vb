@@ -41,7 +41,11 @@ FROM tblOptions GROUP BY tblOptions.FeatureID, tblOptions.UpgradeID, tblOptions.
 
     End Sub
 
+    Friend Function OptionList() As List(Of String)
+        Throw New NotImplementedException()
+    End Function
 
-
-
+    Friend Function FeatureList() As List(Of String)
+        Throw New NotImplementedException()
+    End Function
 End Class
