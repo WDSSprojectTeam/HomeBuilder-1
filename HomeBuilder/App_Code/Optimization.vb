@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.VisualBasic
 Imports Microsoft.SolverFoundation.Services
 
-Public Class TeamOptimizer
+Public Class Optimization
     ' inputs
     Private myFeatureList As List(Of String)
     Private myOptionList As List(Of String)
