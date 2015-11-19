@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.VisualBasic
 
 Public Class Feature
-    Private OptionList As New List(Of Options)
+    Private myOptionList As New List(Of Options)
     Private FeatureName As String
     Private FeatureID As Integer
     Private RoomID As Integer
@@ -16,7 +16,6 @@ Public Class Feature
         FeatureID = ID
         PreferenceRating = 0
     End Sub
-
 
     ReadOnly Property Name As String
         Get
@@ -37,6 +36,16 @@ Public Class Feature
 
         Set(passedRating As Integer)
             PreferenceRating = passedRating
+        End Set
+    End Property
+
+    Property OptionList As List(Of Options)
+        Get
+            Return myOptionList
+        End Get
+
+        Set(passedList As List(Of Options))
+            myOptionList = passedList
         End Set
     End Property
 
