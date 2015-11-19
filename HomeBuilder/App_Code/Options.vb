@@ -1,6 +1,6 @@
 ﻿Imports Microsoft.VisualBasic
 
-Public Class [Option]
+Public Class Options
     Private ID As Integer
     Private Name As String
     Private Price As Double
@@ -58,5 +58,17 @@ Public Class [Option]
             Return FeatureID
         End Get
     End Property
+
+    Public Property Rating As Integer
+        Get
+            Return PreferenceRating
+        End Get
+
+        Set(passedRating As Integer)
+            PreferenceRating = passedRating
+        End Set
+    End Property
+
+
 
 End Class

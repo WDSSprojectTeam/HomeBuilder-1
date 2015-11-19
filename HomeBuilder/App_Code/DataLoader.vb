@@ -29,7 +29,7 @@ FROM tblOptions GROUP BY tblOptions.FeatureID, tblOptions.UpgradeID, tblOptions.
                 Dim OptionPrice As Double = myReader.Item("UpgradePrice")
                 Dim OptionDescription As String = myReader.Item("Description")
                 Dim OptionFeature As Integer = myReader.Item("FeatureID")
-                afeaturelist.Addtofeaturelist(New [Option](OptionID, OptionName, OptionPrice, OptionDescription, OptionFeature))
+                afeaturelist.Addtofeaturelist(New Options(OptionID, OptionName, OptionPrice, OptionDescription, OptionFeature))
             Loop
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -41,11 +41,11 @@ FROM tblOptions GROUP BY tblOptions.FeatureID, tblOptions.UpgradeID, tblOptions.
 
     End Sub
 
-    Friend Function OptionList() As List(Of String)
+    Friend Function OptionList() As List(Of Options)
         Throw New NotImplementedException()
     End Function
 
-    Friend Function FeatureList() As List(Of String)
+    Friend Function FeatureList() As List(Of Feature)
         Throw New NotImplementedException()
     End Function
 End Class
