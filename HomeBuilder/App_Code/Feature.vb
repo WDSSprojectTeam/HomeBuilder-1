@@ -1,16 +1,17 @@
 ﻿Imports Microsoft.VisualBasic
 
 Public Class Feature
-    Private FeatureList As New List(Of Options)
+    Private OptionList As New List(Of Options)
     Private FeatureName As String
     Private FeatureID As Integer
+    Private RoomID As Integer
     Private PreferenceRating As Integer
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(ByVal name As String, ByVal ID As Integer)
+    Public Sub New(ByVal name As String, ByVal ID As Integer, ByVal roomID As Integer, ByVal passedOptions As List(Of Options))
         FeatureName = name
         FeatureID = ID
         PreferenceRating = 0
@@ -43,14 +44,14 @@ Public Class Feature
 
 
     Public Sub Addtofeaturelist(ByVal anoption As Options)
-        FeatureList.Add(anoption)
+        OptionList.Add(anoption)
     End Sub
 
     Public Function Getfeaturelist() As ArrayList
 
         Dim allfeatures As New ArrayList
         Dim anoption As Options
-        For Each anoption In FeatureList
+        For Each anoption In OptionList
             If (Not allfeatures.Contains(anoption.getoptionfeature)) Then
                 allfeatures.Add(anoption.getoptionfeature)
             End If

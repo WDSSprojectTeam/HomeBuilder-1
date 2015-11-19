@@ -20,4 +20,7 @@
 
     End Sub
 
+    Protected Sub btnBuildHome_Click(sender As Object, e As EventArgs) Handles btnBuildHome.Click
+        Response.Redirect("~\FeatureEvaluation1.aspx")
+    End Sub
 End Class
