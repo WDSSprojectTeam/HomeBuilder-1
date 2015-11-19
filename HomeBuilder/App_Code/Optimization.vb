@@ -5,7 +5,7 @@ Imports System.Collections.Generic
 Public Class Optimization
     ' inputs
     Private myFeatureList As List(Of Feature)
-    Private myOptionList As List(Of Options)
+    Private myOptionList As List(Of [Option])
     Private myCostList As List(Of Cost)
     Private budget As Integer
     Private featureUtility As List(Of Integer)

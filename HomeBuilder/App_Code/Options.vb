@@ -1,6 +1,6 @@
 ﻿Imports Microsoft.VisualBasic
 
-Public Class Options
+Public Class [Option]
     Private ID As Integer
     Private Name As String
     Private Price As Double

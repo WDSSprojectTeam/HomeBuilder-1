@@ -7,11 +7,11 @@ Public Class OptimizationResults
     Public Class OptimizationResults
 
         Private myChoiceList As New List(Of Decision)
-        Private myOptionList As New List(Of Options)
+        Private myOptionList As New List(Of [Option])
         Private myFeatureList As New List(Of Feature)
         Private myFeatures As New List(Of Integer)
 
-        Public Sub New(ByVal choices As List(Of Decision), ByVal options As List(Of Options), ByVal features As List(Of Feature))
+        Public Sub New(ByVal choices As List(Of Decision), ByVal options As List(Of [Option]), ByVal features As List(Of Feature))
             myChoiceList = choices
             myOptionList = options
             myFeatureList = features
