@@ -59,7 +59,7 @@ Public Class Optimization
         ' Sum(Xij) = 1 
         For i = 0 To myFeatureList.Count - 1
             Dim myChoice As Term = 0
-            Dim constraintName As String = myFeatureList.Item(i) & "have options"
+            Dim constraintName As String = myFeatureList.Item(i).Name & "have options"
             For j = 0 To myOptionList.Count - 1
                 Dim optionInfeature As Decision = myDecisionList.Item(j + i)
                 myChoice += optionInfeature

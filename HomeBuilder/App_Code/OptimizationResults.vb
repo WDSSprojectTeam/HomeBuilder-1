@@ -30,9 +30,9 @@ Public Class OptimizationResults
 
         Public Function StudentsFromDept(ByVal deptID As String) As Integer
             Dim totalStudentsFromThisDept As Integer = 0
-            For i = 0 To myTeamList.Count - 1
-                totalStudentsFromThisDept += myTeamList.Item(i).StudentsFrom(deptID) * TeamCount(i)
-            Next
+            'For i = 0 To myTeamList.Count - 1
+            '    totalStudentsFromThisDept += myTeamList.Item(i).StudentsFrom(deptID) * TeamCount(i)
+            'Next
             Return totalStudentsFromThisDept
         End Function
 

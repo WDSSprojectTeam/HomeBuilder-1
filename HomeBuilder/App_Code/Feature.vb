@@ -6,11 +6,16 @@ Public Class Feature
     Private FeatureID As Integer
     Private PreferenceRating As Integer
 
+    Public Sub New()
+
+    End Sub
+
     Public Sub New(ByVal name As String, ByVal ID As Integer)
         FeatureName = name
         FeatureID = ID
         PreferenceRating = 0
     End Sub
+
 
     ReadOnly Property Name As String
         Get
