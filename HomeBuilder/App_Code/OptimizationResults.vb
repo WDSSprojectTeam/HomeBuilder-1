@@ -21,7 +21,7 @@ Public Class OptimizationResults
             Dim c As Integer = 0
             For i = 0 To myChoiceList.Count - 1
                 If myChoiceList.Item(i).ToDouble = 1 And myFeatures(i) = featureID Then
-                    c = myOptionList.Item(i).getoptionprice
+                    c = myOptionList.Item(i).Price
                 End If
             Next
 

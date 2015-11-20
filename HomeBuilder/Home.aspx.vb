@@ -1,18 +1,16 @@
 ﻿Public Class Home
     Inherits Page
 
-
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
-        LoadData()
+        GetData()
 
 
     End Sub
 
-    Private Sub LoadData()
+    Private Sub GetData()
         If (Not IsPostBack) Then
             Dim myDataLoader As New DataLoader
-            myDataLoader.LoadOptions()
+            myDataLoader.LoadData()
             Session("myData") = myDataLoader
 
         End If

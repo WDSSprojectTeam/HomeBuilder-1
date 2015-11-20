@@ -61,8 +61,8 @@ Public Class Feature
         Dim allfeatures As New ArrayList
         Dim anoption As Options
         For Each anoption In OptionList
-            If (Not allfeatures.Contains(anoption.getoptionfeature)) Then
-                allfeatures.Add(anoption.getoptionfeature)
+            If (Not allfeatures.Contains(anoption.FeatureID)) Then
+                allfeatures.Add(anoption.FeatureID)
             End If
         Next
         Return allfeatures

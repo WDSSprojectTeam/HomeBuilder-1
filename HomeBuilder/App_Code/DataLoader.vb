@@ -11,8 +11,12 @@ Public Class DataLoader
     Private myCommand As OleDbCommand
     Private myReader As OleDbDataReader
 
+    Public Sub LoadData()
+        LoadFeatures()
+        LoadOptions()
+    End Sub
+
     Public Sub LoadFeatures()
-        'Dim aOptionList As New List(Of Options)
 
         myConnection = New OleDbConnection(myConnectionStr)
         myCommand = New OleDbCommand("SELECT tblFeatures.FeatureID, tblFeatures.Feature, tblFeatures.RoomID From tblFeatures", myConnection)
@@ -22,7 +26,7 @@ Public Class DataLoader
             myReader = myCommand.ExecuteReader
 
             Do While (myReader.Read)
-                Dim featureID As Integer = myReader.Item("UpgradeID")
+                Dim featureID As Integer = myReader.Item("FeatureID")
                 Dim featureName As String = myReader.Item("Feature")
                 Dim roomID As Integer = myReader.Item("RoomID")
 
@@ -66,7 +70,7 @@ FROM tblOptions GROUP BY tblOptions.FeatureID, tblOptions.UpgradeID, tblOptions.
             myFeatureList = Session("FeatureSet")
             For Each feat In myFeatureList
                 For Each opt In aOptionList
-                    If opt.getoptionfeature = feat.ID Then
+                    If opt.FeatureID = feat.ID Then
                         feat.OptionList = aOptionList
                     End If
                 Next
