@@ -25,7 +25,7 @@ Public Class Feature
 
     ReadOnly Property ID As String
         Get
-            Return FeatureName
+            Return FeatureID
         End Get
     End Property
 

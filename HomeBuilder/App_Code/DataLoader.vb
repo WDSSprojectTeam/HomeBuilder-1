@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.VisualBasic
 Imports System.Data
 Imports System.Data.OleDb
-Imports System.Web.UI.datavisualization.Charting
+Imports System.Web.UI.DataVisualization.Charting
 
 Public Class DataLoader
     Inherits System.Web.UI.Page
@@ -9,6 +9,13 @@ Public Class DataLoader
     Private myConnectionStr As String = ConfigurationManager.ConnectionStrings("ConnectionStr10").ToString
     Private myConnection As OleDbConnection
     Private myCommand As OleDbCommand
+
+    Private myFeatureSet As New List(Of Feature)
+
+    Public Function GetAllHomesTable() As Object
+        Throw New NotImplementedException()
+    End Function
+
     Private myReader As OleDbDataReader
 
     Public Sub LoadData()
@@ -20,7 +27,7 @@ Public Class DataLoader
 
         myConnection = New OleDbConnection(myConnectionStr)
         myCommand = New OleDbCommand("SELECT tblFeatures.FeatureID, tblFeatures.Feature, tblFeatures.RoomID From tblFeatures", myConnection)
-
+        Dim myFeatureList As New List(Of Feature)
         Try
             myConnection.Open()
             myReader = myCommand.ExecuteReader
@@ -31,17 +38,23 @@ Public Class DataLoader
                 Dim roomID As Integer = myReader.Item("RoomID")
 
                 Dim myFeature As New Feature(featureName, featureID, roomID, New List(Of Options))
+                myFeatureList.Add(myFeature)
             Loop
         Catch ex As Exception
             MsgBox(ex.ToString)
         Finally
             myReader.Close()
             myConnection.Close()
+            Session("FeatureSet") = myFeatureList
 
         End Try
 
 
     End Sub
+
+    Public Function GetHomeDetails(iD As Integer) As Object
+        Throw New NotImplementedException()
+    End Function
 
     Public Sub LoadOptions()
 
